@@ -39,8 +39,8 @@ SQLite (default for this setup)
 
 🚀 Setup Instructions
 1. Clone the repo
-git clone https://github.com/your-username/my-expense-app.git
-cd my-expense-app
+git clone https://github.com/your-username/expense-module-app.git
+cd expense-module-app
 
 2. Install dependencies
 composer install
@@ -64,15 +64,12 @@ touch database/database.sqlite
 php artisan migrate
 
 
-If you already created tables before:
+If you have already created tables before:
 
 php artisan migrate:fresh
 
 5. Register module provider
 
-Open bootstrap/providers.php and add:
-
-Modules\Expenses\Providers\ModuleServiceProvider::class,
 
 6. Start server
 php artisan serve
@@ -95,6 +92,16 @@ POST	/expenses	Create expense
 GET	/expenses/{id}	View expense
 PUT	/expenses/{id}	Update expense
 DELETE	/expenses/{id}	Delete expense
+
+Route List :
+ 
+  GET|HEAD  api/expenses ...... index
+  POST      api/expenses ...... store
+  GET|HEAD  api/expenses/{id} .. show
+  PUT       api/expenses/{id} update
+  DELETE    api/expenses/{id} destroy
+ 
+
 📝 Example Requests
 Create Expense
 
@@ -146,13 +153,13 @@ Setup & module scaffolding: 1 hour
 
 CRUD implementation: 3.5 hours
 
-Service layer + repository: 2.5 hours
+Service layer + repository: 3.5 hours
 
-Events + resources: 2 hours
+Events + resources: 3.5 hours
 
 README & docs: 1 hour
 
-Total: 10 hours
+Total: 12.5 hours
 
 ✅ Assumptions
 
